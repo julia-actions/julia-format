@@ -1,3 +1,4 @@
+import Pkg; Pkg.add("JuliaFormatter")
 using JuliaFormatter
 
 help = """
