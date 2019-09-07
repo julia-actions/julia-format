@@ -1,6 +1,6 @@
 # Github Action For JuliaFormatter.jl
 
-Github action that runs [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) on your `.jl` files.  See the help message in [this file](https://github.com/domluna/JuliaFormatter.jl/blob/master/bin/format.jl) for detailed description of flags/arguments.
+Github action that runs [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) on your `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
 
 ## Usage
 
@@ -16,7 +16,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-    - uses: domluna/JuliaFormatter-action@master
+    - uses: domluna/julia-format-action@master
       with:
         args: -v .
 ```
