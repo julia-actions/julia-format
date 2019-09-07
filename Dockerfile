@@ -13,6 +13,6 @@ RUN julia -e 'using Pkg; Pkg.add("JuliaFormatter"); using JuliaFormatter'
 
 ENV PATH="$HOME/.julia/dev/JuliaFormatter.jl/bin:$PATH"
 
-COPY entrypoint.sh /entrypoint.sh
+COPY format.jl /format.jl
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/format.jl"]
