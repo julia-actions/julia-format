@@ -16,7 +16,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-    - uses: domluna/julia-format-action@master
+    - uses: domluna/JuliaFormatter-action@master
       with:
         args: -v .
 ```
