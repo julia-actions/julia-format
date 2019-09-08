@@ -13,4 +13,4 @@ RUN julia -e 'using Pkg; Pkg.add("JuliaFormatter"); using JuliaFormatter'
 
 COPY format.jl /format.jl
 
-ENTRYPOINT ["julia", "/format.jl"]
+ENTRYPOINT ["/format.jl"]

@@ -1,4 +1,8 @@
-import Pkg; Pkg.add("JuliaFormatter")
+#!/usr/bin/env julia
+
+println(pwd())
+println(readdir())
+
 using JuliaFormatter
 
 help = """
