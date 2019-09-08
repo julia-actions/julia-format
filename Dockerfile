@@ -12,5 +12,6 @@ LABEL "maintainer"="Dominique Luna <dluna132@gmail.com>"
 RUN julia -e 'using Pkg; Pkg.add("JuliaFormatter"); using JuliaFormatter'
 
 COPY format.jl /format.jl
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/format.jl"]
+ENTRYPOINT ["/entrypoint.sh"]
