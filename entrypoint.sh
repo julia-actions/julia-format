@@ -2,4 +2,4 @@
 set -e
 set -o pipefail
 
-julia --project=$GITHUB_WORKSPACE format.jl "$@"
+julia format.jl "$@"
