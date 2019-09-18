@@ -1,7 +1,16 @@
 #!/usr/bin/env julia
 
-println(pwd())
-println(readdir())
+try
+    # For some reason, adding JuliaFormatter in the docker file doesn't work.
+    # As a work-around, we add here instead. However, if JuliaFormatter-action
+    # has been called on a PR for JuliaFormatter, then $GITHUB_WORKSPACE already
+    # contains the package! That means that Pkg.add will throw the error:
+    #   ERROR: Cannot add package with the same name or uuid as the project
+    # If so, we catch the error and silently move on.
+    import Pkg
+    Pkg.add("JuliaFormatter")
+catch
+end
 
 using JuliaFormatter
 
