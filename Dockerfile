@@ -9,8 +9,6 @@ LABEL "repository"="https://github.com/domluna/JuliaFormatter-action"
 LABEL "homepage"="https://github.com/domluna/JuliaFormatter-action"
 LABEL "maintainer"="Dominique Luna <dluna132@gmail.com>"
 
-RUN julia -e 'using Pkg; Pkg.add("JuliaFormatter"); using JuliaFormatter'
-
 COPY format.jl /format.jl
 COPY entrypoint.sh /entrypoint.sh
 

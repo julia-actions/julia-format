@@ -2,4 +2,4 @@
 set -e
 set -o pipefail
 
-/format.jl "$@"
+julia format.jl "$@"
