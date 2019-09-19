@@ -1,7 +1,5 @@
 # Github Action For JuliaFormatter.jl
 
-> THIS DOES NOT CURRENTLY WORK. TRYING TO FIGURE IT OUT. IF YOU CAN MAKE IT WORK THAT WOULD BE GREAT :)
-
 Github action that runs [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) on your `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
 
 ## Usage
