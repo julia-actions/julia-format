@@ -18,6 +18,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     - uses: domluna/JuliaFormatter-action@master
       with:
         args: -v .
