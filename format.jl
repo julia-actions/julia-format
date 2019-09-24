@@ -93,6 +93,17 @@ end
 opts = parse_opts!(ARGS)
 if isempty(ARGS) || haskey(opts, :help)
     write(stdout, help)
-    exit(0)
+    # for the purposes of the action this
+    # will count as a failure
+    exit(1)
 end
 format(ARGS; opts...)
+
+out = Cmd(`git diff --name-only`) |> read |> String
+if out == ""
+    exit(0)
+else
+    @error "Some files have not been formatted !!!"
+    write(stdout, out)
+    exit(1)
+end
