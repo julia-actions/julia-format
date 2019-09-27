@@ -1,10 +1,10 @@
 # Github Action For JuliaFormatter.jl
 
-Github action that runs [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) on your `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
+Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
 
 ## Usage
 
-This will recursively format all `.jl` files your repository with default indentation width and maximum line margin.  `-v` toggles verbose output.
+`-v` toggles verbose output.
 
 
 ```yaml
