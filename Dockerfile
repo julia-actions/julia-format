@@ -9,6 +9,10 @@ LABEL "repository"="https://github.com/domluna/JuliaFormatter-action"
 LABEL "homepage"="https://github.com/domluna/JuliaFormatter-action"
 LABEL "maintainer"="Dominique Luna <dluna132@gmail.com>"
 
+RUN sudo apt update
+# need this to compare files have changed
+RUN sudo apt install git-all
+
 COPY format.jl /format.jl
 COPY entrypoint.sh /entrypoint.sh
 
