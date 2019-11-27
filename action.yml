@@ -1,0 +1,5 @@
+name: 'julia-format'
+description: 'Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files'
+runs:
+  using: 'node12'
+  main: 'index.js'

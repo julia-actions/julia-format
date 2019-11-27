@@ -1,0 +1,24 @@
+{
+  "name": "julia-format",
+  "version": "1.0.0",
+  "description": "Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saschatimme/julia-format.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saschatimme/julia-format/issues"
+  },
+  "homepage": "https://github.com/saschatimme/julia-format#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1"
+  }
+}
