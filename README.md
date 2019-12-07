@@ -1,8 +1,9 @@
 # Github Action For JuliaFormatter.jl
 
-Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.  See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
+Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.
+See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
 
-## Usage
+## Example Usage
 
 `-v` toggles verbose output.
 

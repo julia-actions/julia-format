@@ -27,8 +27,8 @@ JuliaFormatter formats Julia (.jl) programs. The formatter is width-sensitive.
 
 Without an explicit file or path, this help message is written to stdout.
 Given a file, it operates on that file; given a directory, it operates on
-all .jl files in that directory, recursively (Files starting with a nofmt comment are ignored).
-By default, JuliaFormatter overwrites files with the reformatted source.
+all .jl files in that directory, recursively.  By default, JuliaFormatter overwrites
+files with the reformatted source.
 
 Usage:
 
