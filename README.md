@@ -1,4 +1,12 @@
-# Github Action For JuliaFormatter.jl
+# Github Actions Workflows For JuliaFormatter.jl
+
+## Workflows
+
+- [Format check with version](./workflows/format_check.yml)
+- [Open format PR on interval](./workflows/format_pr.yml)
+
+
+## Legacy Docker Version
 
 Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.
 See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
@@ -22,4 +30,7 @@ jobs:
       with:
         args: -v .
 ```
+
+
+
 
