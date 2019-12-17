@@ -8,6 +8,8 @@
 
 ## Legacy Docker Version
 
+> NOTE: this section is deprecated. It's advised you use the format check example above.
+
 Github action which verifies [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl) was on `.jl` files.
 See the help message in [format.jl](./format.jl) for detailed description of flags/arguments.
 
