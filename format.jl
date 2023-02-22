@@ -120,6 +120,9 @@ function parse_opts!(args::Vector{String})
     return opts
 end
 
+diff_before = Cmd(`git diff --name-only`) |> read |> String
+@assert diff_before ==""
+
 opts = parse_opts!(ARGS)
 if isempty(ARGS) || haskey(opts, :help)
     write(stdout, help)
