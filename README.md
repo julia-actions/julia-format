@@ -1,6 +1,6 @@
 # julia-format
 
-## Setup workfow with `julia-format` action
+## Setup workflow with `julia-format` action
 
 Save the following code as `Format.yml` in the `.github/workflows/` directory in your repository.
 
@@ -19,7 +19,7 @@ With this workflow, [reviewdog](https://github.com/reviewdog/reviewdog) will aut
 
 ## Anoter possible workflow without `julia-format` action
 
-You can also create another workfow like this:
+You can also create another workflow like this:
 
 ```yaml
 name: format-pr
