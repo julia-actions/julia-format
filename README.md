@@ -1,8 +1,8 @@
 # julia-format
 
-## Setup workfow
+## Setup workfow with `julia-format` action
 
-Save the following code as `.github/workflows/Format.yml` in your repository.
+Save the following code as `Format.yml` in the `.github/workflows/` directory in your repository.
 
 ```yaml
 name: Format suggestions
@@ -12,14 +12,14 @@ jobs:
   code-style:
     runs-on: ubuntu-latest
     steps:
-      - uses: julia-actions/julia-format@master
+      - uses: julia-actions/julia-format@v2
 ```
 
-With this workflow, [reviewdog](https://github.com/reviewdog/reviewdog) will comment code suggestions to PRs in your repository.
+With this workflow, [reviewdog](https://github.com/reviewdog/reviewdog) will automatically post code suggestions to pull requests in your repository, based on the formatting rules defined by [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl).
 
-## Anoter possible workflow
+## Anoter possible workflow without `julia-format` action
 
-You can also create your workfow like this:
+You can also create another workfow like this:
 
 ```yaml
 name: format-pr
