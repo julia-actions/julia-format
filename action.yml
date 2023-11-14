@@ -1,0 +1,23 @@
+name: 'Format suggestion with JuliaFormatter.jl'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - uses: julia-actions/setup-julia@v1
+    - name: 'Install JuliaFormatter'
+      run: |
+        julia -e '
+          using Pkg
+          Pkg.add("JuliaFormatter")'
+      shell: bash
+    - name: 'Format'
+      run: |
+        julia -e '
+          using JuliaFormatter
+          format(".")'
+      shell: bash
+    - name: 'Suggest'
+      uses: reviewdog/action-suggester@v1
+      with:
+        tool_name: JuliaFormatter
+        fail_on_error: true
