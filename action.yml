@@ -1,4 +1,5 @@
 name: 'Format suggestion with JuliaFormatter.jl'
+description: "Formats your Julia files and suggest changes"
 runs:
   using: "composite"
   steps:
