@@ -30,7 +30,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: julia-actions/cache@v1
       - name: Install JuliaFormatter and format
         run: |
           julia  -e 'import Pkg; Pkg.add("JuliaFormatter")'
