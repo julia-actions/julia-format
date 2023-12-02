@@ -5,6 +5,7 @@ runs:
   steps:
     - uses: actions/checkout@v4
     - uses: julia-actions/setup-julia@v1
+    - uses: julia-actions/cache@v1
     - name: 'Install JuliaFormatter'
       run: |
         julia -e '
