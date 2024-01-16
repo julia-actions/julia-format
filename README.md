@@ -17,7 +17,7 @@ jobs:
 
 With this workflow, [reviewdog](https://github.com/reviewdog/reviewdog) will automatically post code suggestions to pull requests in your repository, based on the formatting rules defined by [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl).
 
-## Anoter possible workflow without `julia-format` action
+## Another possible workflow without `julia-format` action
 
 You can also create another workflow like this:
 
