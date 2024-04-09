@@ -1,25 +1,35 @@
 name: 'Format suggestion with JuliaFormatter.jl'
 description: "Formats your Julia files and suggest changes"
+inputs:
+  version:
+    description: 'Version of JuliaFormatter.jl. Examples: 1, 1.0, 1.0.44'
+    default: '1'
+  suggestion-label:
+    description: 'If set, suggestions will only be shown for PRs with this label applied.'
+    default: ''
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - uses: julia-actions/setup-julia@v1
+    - uses: julia-actions/setup-julia@v2
     - uses: julia-actions/cache@v1
     - name: 'Install JuliaFormatter'
       run: |
         julia -e '
           using Pkg
-          Pkg.add("JuliaFormatter")'
+          Pkg.add(Pkg.PackageSpec(name="JuliaFormatter", version=get(ENV, "jf-version", "1")))'
       shell: bash
+      env:
+        jf-version: ${{ inputs.version }}
     - name: 'Format'
       run: |
         julia -e '
           using JuliaFormatter
-          format(".")'
+          format(".") ? exit(0) : exit(1)'
       shell: bash
     - name: 'Suggest'
       uses: reviewdog/action-suggester@v1
+      if: ${{ failure() && (inputs.suggestion-label == '' || contains( github.event.pull_request.labels.*.name, inputs.suggestion-label )) }}
       with:
         tool_name: JuliaFormatter
         fail_on_error: true
