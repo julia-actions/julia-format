@@ -25,18 +25,16 @@ runs:
       run: |
         julia -e '
           using JuliaFormatter
-          format(".") ? exit(0) : exit(1)'
+          format(".")'
       shell: bash
     - name: Check for formatting errors
-      shell: julia --color=yes --project=@juliaformatter {0}
+      shell: bash
       run: |
-        out = Cmd(`git diff --name-only`) |> read |> String
-        if out == ""
-            exit(0)
-        else
-            @error "Some files have not been formatted !!!"
-            write(stdout, out)
-            exit(1)
+        output=$(git diff --name-only)
+        if [ "$output" != "" ]; then
+            echo 1>&2 "Some files have not been formatted !!!"
+            echo "$output"
+            exit 1
         end
     - name: 'Suggest'
       uses: reviewdog/action-suggester@v1
