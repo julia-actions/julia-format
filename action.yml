@@ -35,7 +35,7 @@ runs:
             echo 1>&2 "Some files have not been formatted !!!"
             echo "$output"
             exit 1
-        end
+        fi
     - name: 'Suggest'
       uses: reviewdog/action-suggester@v1
       if: ${{ failure() && (inputs.suggestion-label == '' || contains( github.event.pull_request.labels.*.name, inputs.suggestion-label )) }}
