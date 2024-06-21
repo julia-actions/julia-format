@@ -32,7 +32,7 @@ runs:
       run: |
         output=$(git diff --name-only)
         if [ "$output" != "" ]; then
-            echo 1>&2 "Some files have not been formatted !!!"
+            >&2 echo "Some files have not been formatted !!!"
             echo "$output"
             exit 1
         fi
