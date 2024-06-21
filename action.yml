@@ -25,8 +25,17 @@ runs:
       run: |
         julia -e '
           using JuliaFormatter
-          format(".") ? exit(0) : exit(1)'
+          format(".")'
       shell: bash
+    - name: Check for formatting errors
+      shell: bash
+      run: |
+        output=$(git diff --name-only)
+        if [ "$output" != "" ]; then
+            >&2 echo "Some files have not been formatted !!!"
+            echo "$output"
+            exit 1
+        fi
     - name: 'Suggest'
       uses: reviewdog/action-suggester@v1
       if: ${{ failure() && (inputs.suggestion-label == '' || contains( github.event.pull_request.labels.*.name, inputs.suggestion-label )) }}
