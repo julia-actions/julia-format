@@ -18,9 +18,12 @@ runs:
       run: |
         import Pkg
 
-        # Get the desired JuliaFormatter version number
-        # Strip leading and lagging whitespace
-        version = strip(get(ENV, "jf-version", "1"))
+        # Get the desired JuliaFormatter version number:
+        _version_original = get(ENV, "jf-version", "1")
+
+        # Strip leading and lagging whitespace.
+        # We need to then convert back to String, because Pkg won't accept SubString:
+        version = convert(String, strip(_version_original))::String
 
         # Make sure to specify the UUID of the package:
         p = Pkg.PackageSpec(
