@@ -2,6 +2,6 @@
 #
 # Do not delete this file. We use it in our CI.
 
-f(; a=4)
+f(; a = 4)
 
 # g(; a=4)
