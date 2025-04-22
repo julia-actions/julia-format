@@ -14,19 +14,17 @@ runs:
     - uses: julia-actions/setup-julia@v2
     - uses: julia-actions/cache@v2
     - name: Install JuliaFormatter
+      shell: julia --color=yes {0}
       run: |
-        julia -e '
-          using Pkg
-          Pkg.add(Pkg.PackageSpec(name="JuliaFormatter", version=get(ENV, "jf-version", "1")))'
-      shell: bash
+        using Pkg
+        Pkg.add(Pkg.PackageSpec(name="JuliaFormatter", version=get(ENV, "jf-version", "1")))
       env:
         jf-version: ${{ inputs.version }}
     - name: Format
+      shell: julia --color=yes {0}
       run: |
-        julia -e '
-          using JuliaFormatter
-          format(".")'
-      shell: bash
+        using JuliaFormatter
+        format(".")
     - name: Check for formatting errors
       shell: bash
       run: |
