@@ -16,15 +16,15 @@ runs:
     - name: Install JuliaFormatter
       shell: julia --color=yes {0}
       run: |
-        using Pkg
+        import Pkg
         Pkg.add(Pkg.PackageSpec(name="JuliaFormatter", version=get(ENV, "jf-version", "1")))
       env:
         jf-version: ${{ inputs.version }}
     - name: Format
       shell: julia --color=yes {0}
       run: |
-        using JuliaFormatter
-        format(".")
+        import JuliaFormatter
+        JuliaFormatter.format(".")
     - name: Check for formatting errors
       shell: bash
       run: |
