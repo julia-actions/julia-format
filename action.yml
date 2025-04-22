@@ -18,11 +18,15 @@ runs:
       run: |
         import Pkg
         version = get(ENV, "jf-version", "1")
+
+        # Make sure to specify the UUID of the package:
         p = Pkg.PackageSpec(
             name = "JuliaFormatter",
             uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899",
             version = version,
-          )
+        )
+
+        # Install the package:
         Pkg.add(p)
       env:
         jf-version: ${{ inputs.version }}
