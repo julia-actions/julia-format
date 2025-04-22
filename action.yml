@@ -17,7 +17,13 @@ runs:
       shell: julia --color=yes {0}
       run: |
         import Pkg
-        Pkg.add(Pkg.PackageSpec(name="JuliaFormatter", version=get(ENV, "jf-version", "1")))
+        version = get(ENV, "jf-version", "1")
+        p = Pkg.PackageSpec(
+            name = "JuliaFormatter",
+            uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899",
+            version = version,
+          )
+        Pkg.add(p)
       env:
         jf-version: ${{ inputs.version }}
     - name: Format
