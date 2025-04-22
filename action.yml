@@ -17,7 +17,10 @@ runs:
       shell: julia --color=yes {0}
       run: |
         import Pkg
-        version = get(ENV, "jf-version", "1")
+
+        # Get the desired JuliaFormatter version number
+        # Strip leading and lagging whitespace
+        version = strip(get(ENV, "jf-version", "1"))
 
         # Make sure to specify the UUID of the package:
         p = Pkg.PackageSpec(
