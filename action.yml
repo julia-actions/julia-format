@@ -25,6 +25,11 @@ runs:
         # We need to then convert back to String, because Pkg won't accept SubString:
         version = convert(String, strip(_version_original))::String
 
+        if isempty(version)
+            msg = "The version input cannot be empty"
+            error(msg)
+        end
+
         # Make sure to specify the UUID of the package:
         p = Pkg.PackageSpec(
             name = "JuliaFormatter",
