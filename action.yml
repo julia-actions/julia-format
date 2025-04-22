@@ -13,7 +13,7 @@ runs:
     - uses: actions/checkout@v4
     - uses: julia-actions/setup-julia@v2
     - uses: julia-actions/cache@v2
-    - name: 'Install JuliaFormatter'
+    - name: Install JuliaFormatter
       run: |
         julia -e '
           using Pkg
@@ -21,7 +21,7 @@ runs:
       shell: bash
       env:
         jf-version: ${{ inputs.version }}
-    - name: 'Format'
+    - name: Format
       run: |
         julia -e '
           using JuliaFormatter
@@ -36,7 +36,7 @@ runs:
             echo "$output"
             exit 1
         fi
-    - name: 'Suggest'
+    - name: Suggest
       uses: reviewdog/action-suggester@v1
       if: ${{ failure() && (inputs.suggestion-label == '' || contains( github.event.pull_request.labels.*.name, inputs.suggestion-label )) }}
       with:
