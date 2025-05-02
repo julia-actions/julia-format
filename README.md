@@ -20,7 +20,8 @@ jobs:
       - uses: julia-actions/julia-format@v4
         with:
           version: '1' # Set `version` to '1.0.54' if you need to use JuliaFormatter.jl v1.0.54 (default: '1')
-          suggestion-label: 'format-suggest' # leave this unset or empty to show suggestions for all PRs
+          suggestion-label: 'format-suggest' # Leave this unset or empty to show suggestions for all PRs
+          paths: 'src/, test/' # Leave this unset to format every file
 ```
 
 With this workflow, [reviewdog](https://github.com/reviewdog/reviewdog) will automatically post code suggestions to pull requests in your repository, based on the formatting rules defined by [JuliaFormatter.jl](https://github.com/domluna/JuliaFormatter.jl).
