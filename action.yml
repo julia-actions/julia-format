@@ -2,8 +2,8 @@ name: 'Format suggestion with JuliaFormatter.jl'
 description: "Formats your Julia files and suggest changes"
 inputs:
   version:
-    description: 'Version of JuliaFormatter.jl. Examples: 1, 1.0, 1.0.44'
-    default: '1'
+    description: 'Version of JuliaFormatter.jl. Examples: 2, 2.0, 2.0.44'
+    default: '2'
   suggestion-label:
     description: 'If set, suggestions will only be shown for PRs with this label applied.'
     default: ''
@@ -19,7 +19,7 @@ runs:
         import Pkg
 
         # Get the desired JuliaFormatter version number:
-        _version_original = get(ENV, "jf-version", "1")
+        _version_original = get(ENV, "jf-version", "2")
 
         # Strip leading and lagging whitespace.
         # We need to then convert back to String, because Pkg won't accept SubString:
