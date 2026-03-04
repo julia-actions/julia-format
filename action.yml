@@ -7,6 +7,9 @@ inputs:
   suggestion-label:
     description: 'If set, suggestions will only be shown for PRs with this label applied.'
     default: ''
+  paths:
+    description: 'A comma-separated list of paths (folders or files) to be formatted'
+    default: '.'
 runs:
   using: "composite"
   steps:
@@ -45,7 +48,10 @@ runs:
       shell: julia --color=yes {0}
       run: |
         import JuliaFormatter
-        JuliaFormatter.format(".")
+        paths = strip.(split(get(ENV, "jf-paths", "."), ","))
+        JuliaFormatter.format(paths)
+      env:
+        jf-paths: ${{ inputs.paths }}
     - name: Check for formatting errors
       shell: bash
       run: |
